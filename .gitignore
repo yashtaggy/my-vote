@@ -1,0 +1,37 @@
+# MyVote Project Root .gitignore
+
+# ─── Global & OS ───────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+node_modules/
+.idea/
+.vscode/
+*.swp
+*.log
+
+# ─── Environment Variables (CRITICAL: DO NOT COMMIT SECRETS) ───────────────────
+.env
+.env.*
+!.env.example # Allow pushing the example env file
+
+# ─── Python / Backend ──────────────────────────────────────────────────────────
+backend/venv/
+backend/.venv/
+backend/env/
+backend/__pycache__/
+backend/*.pyc
+backend/*.pyo
+backend/*.pyd
+backend/.pytest_cache/
+backend/myvote.db
+
+# ─── Node.js / Next.js / Frontend ──────────────────────────────────────────────
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/build/
+frontend/.vercel/
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+frontend/.pnp.*

@@ -1,0 +1,6 @@
+venv/
+__pycache__/
+*.pyc
+.env
+myvote.db
+*/__pycache__/
