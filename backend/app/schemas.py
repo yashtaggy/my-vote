@@ -30,7 +30,7 @@ class OnboardRequest(BaseModel):
     age: int = Field(..., ge=1, le=120, description="User age")
     state: str = Field(..., min_length=2, max_length=50)
     city: str = Field(..., min_length=2, max_length=100)
-    pincode: str = Field(..., regex=r"^\d{6}$")
+    pincode: str = Field(..., pattern=r"^\d{6}$")
     is_first_time_voter: bool = True
     language: Language = Language.EN
 

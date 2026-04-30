@@ -141,7 +141,7 @@ export default function SimulatePage() {
 
                 {/* VVPAT Overlay */}
                 {vvpatVisible && vvpatCandidate && (
-                    <div style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.85)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000, backdropFilter: 'blur(8px)' }}>
+                    <div role="alert" aria-live="polite" style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.85)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000, backdropFilter: 'blur(8px)' }}>
                         <div style={{ background: '#F8F8E8', borderRadius: '16px', padding: '32px', textAlign: 'center', border: '4px solid #138808', maxWidth: '320px' }}>
                             <div style={{ color: '#1A1F4B', fontWeight: 800, fontSize: '0.85rem', marginBottom: '8px', textTransform: 'uppercase' }}>📄 VVPAT Paper Slip</div>
                             <div style={{ fontSize: '3rem', marginBottom: '8px' }}>{vvpatCandidate.symbol}</div>
@@ -188,6 +188,7 @@ export default function SimulatePage() {
                                     value={voterIdInput}
                                     onChange={e => setVoterIdInput(e.target.value)}
                                     placeholder="e.g. ABC1234567"
+                                    aria-label="Enter Voter ID"
                                     style={{ width: '100%', background: 'rgba(255,255,255,0.07)', border: '1px solid rgba(255,255,255,0.15)', borderRadius: '10px', padding: '12px 16px', color: 'white', fontSize: '0.95rem', marginBottom: '8px' }}
                                     id="voter-id-input"
                                 />

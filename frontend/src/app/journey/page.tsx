@@ -237,6 +237,26 @@ export default function JourneyPage() {
                         </div>
                     )}
 
+                    {/* Interactive Google Map for Booth Locator */}
+                    {current.step_id === 4 && (
+                        <div style={{ marginBottom: '28px' }}>
+                            <h3 style={{ fontWeight: 700, marginBottom: '12px', fontSize: '0.95rem', color: 'rgba(255,255,255,0.85)' }}>
+                                📍 {lang === 'en' ? 'Find Nearby Polling Stations' : 'आस-पास के मतदान केंद्र खोजें'}
+                            </h3>
+                            <div style={{ borderRadius: '14px', overflow: 'hidden', border: '1px solid rgba(255,107,53,0.3)', height: '280px' }}>
+                                <iframe
+                                    width="100%"
+                                    height="100%"
+                                    style={{ border: 0 }}
+                                    loading="lazy"
+                                    allowFullScreen
+                                    referrerPolicy="no-referrer-when-downgrade"
+                                    src={`https://www.google.com/maps/embed/v1/search?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || ''}&q=Polling+Stations+near+me&zoom=14`}
+                                ></iframe>
+                            </div>
+                        </div>
+                    )}
+
                     {/* Official Reference */}
                     <div style={{ padding: '16px', background: 'rgba(255,107,53,0.08)', border: '1px solid rgba(255,107,53,0.2)', borderRadius: '12px', marginBottom: '20px' }}>
                         <div style={{ fontSize: '0.78rem', color: 'rgba(255,107,53,0.8)', fontWeight: 600, marginBottom: '4px' }}>📌 Official Reference</div>

@@ -101,9 +101,9 @@ export default function ChatPage() {
     const suggested = lang === 'hi' ? SUGGESTED_HI : SUGGESTED;
 
     return (
-        <div className="min-h-screen" style={{ display: 'flex', flexDirection: 'column', maxHeight: '100vh' }}>
+        <main className="min-h-screen" style={{ display: 'flex', flexDirection: 'column', maxHeight: '100vh' }}>
             {/* Navbar */}
-            <nav className="glass" style={{ padding: '14px 32px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderRadius: 0, borderLeft: 'none', borderRight: 'none', borderTop: 'none', flexShrink: 0 }}>
+            <header className="glass" style={{ padding: '14px 32px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderRadius: 0, borderLeft: 'none', borderRight: 'none', borderTop: 'none', flexShrink: 0 }}>
                 <Link href="/dashboard" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px' }}>
                     <span style={{ color: 'rgba(255,255,255,0.5)' }}>←</span>
                     <span style={{ fontWeight: 700 }}>
@@ -113,7 +113,7 @@ export default function ChatPage() {
                 <button onClick={() => setLang(l => l === 'en' ? 'hi' : 'en')} className="btn-secondary" style={{ padding: '7px 14px', fontSize: '0.82rem' }}>
                     {lang === 'en' ? '🇮🇳 हिंदी' : '🇮🇳 English'}
                 </button>
-            </nav>
+            </header>
 
             {/* Chat area */}
             <div style={{ flex: 1, overflowY: 'auto', padding: '24px', display: 'flex', flexDirection: 'column', gap: '16px', maxWidth: '820px', width: '100%', margin: '0 auto' }}>
@@ -220,6 +220,6 @@ export default function ChatPage() {
                     Responses sourced from ECI official documents · Always verify at eci.gov.in
                 </p>
             </div>
-        </div>
+        </main>
     );
 }
