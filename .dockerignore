@@ -1,0 +1,12 @@
+node_modules/
+.next/
+out/
+.git/
+__pycache__/
+*.pyc
+backend/venv/
+backend/.venv/
+backend/myvote.db
+*/.env
+*/.env.*
+!.env.example
