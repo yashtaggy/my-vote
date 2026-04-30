@@ -125,7 +125,7 @@ export default function DashboardPage() {
 
                     {/* Eligibility Card */}
                     <div className="glass-card" style={{ padding: '28px' }}>
-                        <h2 style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.5)', marginBottom: '16px', textTransform: 'uppercase', letterSpacing: '0.05em', fontSize: '0.78rem' }}>Eligibility Status</h2>
+                        <h2 style={{ color: 'rgba(255,255,255,0.5)', marginBottom: '16px', textTransform: 'uppercase', letterSpacing: '0.05em', fontSize: '0.78rem' }}>Eligibility Status</h2>
                         <div style={{
                             padding: '20px',
                             borderRadius: '14px',
