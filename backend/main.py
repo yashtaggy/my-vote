@@ -29,13 +29,13 @@ app = FastAPI(
 app.state.limiter = limiter
 app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 
-# CORS
+# Strict CORS for Security
 app.add_middleware(
     CORSMiddleware,
     allow_origins=settings.ALLOWED_ORIGINS,
     allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_methods=["GET", "POST", "OPTIONS"],
+    allow_headers=["Content-Type", "Authorization", "X-Requested-With", "Accept"],
 )
 
 # Routers
@@ -50,6 +50,10 @@ app.include_router(election_info.router, prefix="/api/v1", tags=["Election Info"
 
 @app.get("/api/health", tags=["Health"])
 async def health_check():
+    """
+    Health Check API Endpoint.
+    Returns the operational status, service name, and version to verify deployment up-time.
+    """
     return {"status": "ok", "service": "MyVote Journey API", "version": "1.0.0"}
 
 

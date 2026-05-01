@@ -5,6 +5,7 @@ Rule-based, no LLM involvement — ensures reliable, exact flows.
 
 from fastapi import APIRouter
 from app.schemas import SimulateRequest, SimulateResponse, SimulationAction
+from app.services.analytics import bq_analytics
 
 router = APIRouter()
 
@@ -70,6 +71,9 @@ async def simulate_vote(payload: SimulateRequest):
     Deterministic simulation engine.
     Handles action flow and error scenarios.
     """
+    # Log event to BigQuery
+    bq_analytics.log_simulation_event(session_id=payload.session_id, action=payload.action)
+
     # Error scenario: no voter_id on SHOW_ID step
     if payload.action == SimulationAction.SHOW_ID and not payload.voter_id:
         err = ERROR_SCENARIOS["no_id"]
